@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HousingService } from 'src/app/services/housing.service';
 
+
 @Component({
   selector: 'app-property-list',
   templateUrl: './property-list.component.html',
@@ -18,6 +19,7 @@ export class PropertyListComponent implements OnInit {
         console.log(data);
       },
       (error) => {
+        console.log('http error');
         console.log(error);
       }
     );
