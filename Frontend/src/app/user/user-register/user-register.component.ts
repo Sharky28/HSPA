@@ -9,7 +9,7 @@ export class UserRegisterComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
+  ngOnInit(): void {
   }
 
 }

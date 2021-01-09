@@ -9,7 +9,7 @@ export class UserLoginComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
+  ngOnInit(): void {
   }
 
 }
