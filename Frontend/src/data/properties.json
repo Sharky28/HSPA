@@ -1,37 +1,50 @@
 [{
   "Id":1,
+  "SellRent":1,
   "Name":"Birla house",
   "Type":"House",
-  "Price": 12000
+  "Price": 12000,
+  "Image":"prop-1"
 },
 {
   "Id":2,
+  "SellRent":2,
   "Name":"Erose villa",
   "Type":"House",
-  "Price": 14000
+  "Price": 14000,
+  "Image":"prop-2"
 },
 {
   "Id":3,
+  "SellRent":1,
   "Name":"Penbrook estate",
   "Type":"House",
-  "Price": 22000
+  "Price": 22000,
+  "Image":"prop-3"
 },
 {
   "Id":4,
+  "SellRent":2,
   "Name":"Chathom house",
   "Type":"House",
-  "Price": 40000
+  "Price": 40000,
+  "Image":"prop-4"
 },
 {
   "Id":5,
+  "SellRent":1,
   "Name":"Ugas manner",
   "Type":"House",
-  "Price": 92000
+  "Price": 92000,
+  "Image":"prop-5"
 },
 {
   "Id":6,
+  "SellRent":1,
   "Name":"Pearl white house",
   "Type":"House",
-  "Price": 18000
+  "Price": 18000,
+  "Image":"prop-6"
+
 }
 ]
