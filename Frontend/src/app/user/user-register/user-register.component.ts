@@ -5,6 +5,8 @@ import {
   FormGroup,
   Validators,
 } from '@angular/forms';
+import { User } from 'src/app/model/user';
+import { UserServiceService } from 'src/app/services/user-service.service';
 
 @Component({
   selector: 'app-user-register',
@@ -13,9 +15,10 @@ import {
 })
 export class UserRegisterComponent implements OnInit {
   registerationForm!: FormGroup;
-  user: any = {};
+  user!: User;
+  userSubmited!:boolean;
 
-  constructor(private fb: FormBuilder) {}
+  constructor(private fb: FormBuilder,private userService: UserServiceService) {}
 
   ngOnInit(): void {
     this.createRegistrationForm();
@@ -59,19 +62,23 @@ export class UserRegisterComponent implements OnInit {
 
   onSubmit() {
     console.log(this.registerationForm);
-    this.user = Object.assign(this.user, this.registerationForm.value);
-    this.addUser(this.user);
+    this.userSubmited= true;
+
+    if(this.registerationForm.valid){
+   // this.user = Object.assign(this.user, this.registerationForm.value);
+    this.userService.addUser(this.userData());
     this.registerationForm.reset();
+    this.userSubmited=false;
+    }
   }
 
-  addUser(user ) {
-    let users = [];
-    if(localStorage.getItem('Users')){
-      users = JSON.parse(localStorage.getItem('Users'));
-      users = [user,...users];
-    }else {
-      users = [user];
-    }
-    localStorage.setItem('Users', JSON.stringify(users));
+  userData():User{
+    return this.user = {
+      userName: this.userName.value,
+      email: this.email.value,
+      password: this.password.value,
+      mobile: this.mobile.value
+    };
   }
+
 }
