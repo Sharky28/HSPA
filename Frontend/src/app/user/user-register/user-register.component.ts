@@ -31,6 +31,24 @@ export class UserRegisterComponent implements OnInit {
      {notmatched: true};
   }
 
+  //________________________
+  //Getter methods for form controls
+  //________________________
+  get userName(){
+    return this.registerationForm.get('userName') as FormControl;
+  }
+  get email(){
+    return this.registerationForm.get('email') as FormControl;
+  }
+  get password(){
+    return this.registerationForm.get('password') as FormControl;
+  }
+  get confirmPassword(){
+    return this.registerationForm.get('confirmPassword') as FormControl;
+  }
+  get mobile(){
+    return this.registerationForm.get('mobile') as FormControl;
+  }
 
 
   onSubmit(){
