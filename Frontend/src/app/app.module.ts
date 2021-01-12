@@ -5,6 +5,10 @@ import {Routes,RouterModule} from '@angular/router';
 import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
+import { TabsModule } from 'ngx-bootstrap/tabs';
+import { ButtonsModule } from 'ngx-bootstrap/buttons';
+
+
 
 import { AppComponent } from './app.component';
 import { PropertyCardComponent } from './property/property-card/property-card.component';
@@ -29,10 +33,6 @@ const appRoutes : Routes = [
   {path: '**', component: PropertyListComponent}
 
 
-
-
-
-
 ]
 
 @NgModule({
@@ -54,7 +54,9 @@ const appRoutes : Routes = [
     ReactiveFormsModule,
     RouterModule.forRoot(appRoutes),
     BrowserAnimationsModule,
-    BsDropdownModule.forRoot()
+    BsDropdownModule.forRoot(),
+    TabsModule.forRoot(),
+    ButtonsModule.forRoot()
   ],
   providers: [
     HousingService,
