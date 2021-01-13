@@ -31,7 +31,8 @@
 
                 <div class="form-group col-12">
                   <p>BHK</p>
-                  <div class="btn-group" btnRadioGroup>
+                  <div class="btn-group" btnRadioGroup
+                  [(ngModel)]="propertyView.BHK" name ="BHK">
                     <label
                       *ngFor="let bhk of [1, 2, 3, 4]"
                       class="btn btn-outline-primary mr-2"
@@ -46,7 +47,7 @@
                 <div class="form-group col-12">
                   <p>Property Type</p>
                   <div class="btn-group" btnRadioGroup name='propType'
-                  [(ngModel)]="propertyView.Type">
+                  [(ngModel)]="propertyView.Ptype">
                     <label
                       *ngFor="let ptype of propertyTypes"
                       class="btn btn-outline-primary mr-2"
@@ -60,7 +61,8 @@
 
                 <div class="form-group col-12">
                   <p>Furnishing type</p>
-                  <div class="btn-group" btnRadioGroup>
+                  <div class="btn-group" btnRadioGroup
+                  [(ngModel)]="propertyView.Ftype"name ="Ftype">
                     <label
                       *ngFor="let ftype of furnishTypes"
                       class="btn btn-outline-primary mr-2"
@@ -98,7 +100,8 @@
 
                 <div class="form-group col-12">
                   <label for="type"> City</label>
-                  <input type="text" class="form-control" />
+                  <input type="text" class="form-control"
+                  [(ngModel)]="propertyView.City" name="City" />
                 </div>
 
 
@@ -132,7 +135,8 @@
 
                   <div class="form-group col-12">
                     <label>Built Area (in Sqr Feet)</label>
-                    <input type="text" class="form-control" />
+                    <input type="text" class="form-control"
+                    [(ngModel)]="propertyView.BuiltArea" name="BuiltArea" />
                   </div>
 
                   <div class="form-group col-12">
@@ -327,7 +331,7 @@
       <h3>Your Property Preview</h3>
     </div>
       <div class="shadow-lg p-3 bg-white">
-      <app-property-card [property]="propertyView"></app-property-card>
+      <app-property-card [property]="propertyView" hideIcons="true"></app-property-card>
     </div>
     </div>
   </div>
