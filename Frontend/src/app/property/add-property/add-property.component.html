@@ -8,10 +8,10 @@
         <form (ngSubmit)="onSubmit()" #Form="ngForm">
           <div class="tab-panel">
             <tabset class="member-tabset" #formTabs>
-              <tab heading="Basic info">
+              <tab heading="Basic info" ngModelGroup="BasicInfo" #BasicInfo="ngModelGroup">
                 <div class="form-group col-12">
                   <p>I want to</p>
-                  <div class="btn-group" btnRadioGroup>
+                  <div class="btn-group" btnRadioGroup ngModel name="SellRent" required>
                     <label
                       class="btn btn-outline-primary mr-2"
                       btnRadio="1"
@@ -110,6 +110,7 @@
                     type="button"
                     class="btn btn-primary btn-block"
                     (click)="selectTab(1)"
+                    [disabled]="!BasicInfo.valid"
                   >
                     Next
                   </button>
@@ -318,6 +319,8 @@
                   >
                     Back
                   </button>
+                  <button type="submit" class="btn btn-primary btn-block">Save</button>
+                  <button type="reset" class="btn btn-primary btn-block">Cancel</button>
                 </div>
               </tab>
             </tabset>
