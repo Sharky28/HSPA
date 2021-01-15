@@ -291,35 +291,36 @@
 
                 <div class="form-group col-12">
                   <p>Gated Community</p>
-                  <div class="btn-group" btnRadioGroup>
+                  <div class="btn-group" btnRadioGroup formArrayName="Gated">
                     <label
                       class="btn btn-outline-primary mr-2"
                       btnRadio="1"
                       role="button"
-                      name="SellRent"
-                      >Yes</label
+                      name="Gated"
+                      >
+                      Yes</label
                     >
                     <label
                       class="btn btn-outline-primary"
                       btnRadio="2"
                       role="button"
-                      name="SellRent"
+                      name="Gated"
                       >No</label
                     >
                   </div>
                 </div>
-
                 <div class="form-group col-12">
-                  <p>Ready to Move</p>
-                  <div class="btn-group" btnRadioGroup>
-                    <label
-                      *ngFor="let dir of directions"
-                      class="btn btn-outline-primary mr-2"
-                      [btnRadio]="dir"
-                      role="button"
-                      name="SellRent"
-                      >{{ dir }}</label
-                    >
+                  <p>Main Entrance</p>
+                  <div class="btn-group" btnRadioGroup
+                  formControlName="MainEntrance">
+                    <label class="btn btn-outline-primary mr-2"
+                    btnRadio=1 tabindex="0" role="button" name="Entrance">East</label>
+                    <label class="btn btn-outline-primary"
+                    btnRadio=2  tabindex="0" role="button" name="Entrance">West</label>
+                    <label class="btn btn-outline-primary"
+                    btnRadio=3  tabindex="0" role="button" name="Entrance">South</label>
+                    <label class="btn btn-outline-primary"
+                    btnRadio=4  tabindex="0" role="button" name="Entrance">North</label>
                   </div>
                 </div>
 
@@ -328,6 +329,7 @@
                   <textarea
                     type="text"
                     class="form-control"
+                    formArrayName="Description"
                     rows="6"
                   ></textarea>
                 </div>
@@ -336,14 +338,14 @@
                   <button
                     type="button"
                     class="btn btn-primary btn-block"
-                    (click)="selectTab(2)"
+                    (click)="selectTab(2,OtherInfo.valid)"
                   >
                     Back
                   </button>
                   <button
                     type="button"
                     class="btn btn-primary btn-block"
-                    (click)="selectTab(4)"
+                    (click)="selectTab(4,OtherInfo.valid)"
                   >
                     Next
                   </button>

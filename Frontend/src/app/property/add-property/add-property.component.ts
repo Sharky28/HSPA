@@ -18,7 +18,7 @@ export class AddPropertyComponent implements OnInit {
   nextClicked!: boolean;
   propertyTypes: Array<string>=['House',' Apartment','Duplex'];
   furnishTypes: Array<string>=['Fully',' Semi','Unfurnished'];
-  directions : Array<string>=['East','West','South','North']
+  //directions : Array<string>=['East','West','South','North']
 
   propertyView : IPropertyBase={
     Id:null,
